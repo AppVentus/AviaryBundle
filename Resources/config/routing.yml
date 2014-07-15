@@ -1,0 +1,5 @@
+aviary_save_image:
+    pattern: /aviary
+    defaults: { _controller: AviaryBundle:Default:save }
+    options:
+        expose: true

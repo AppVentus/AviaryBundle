@@ -1,0 +1,30 @@
+{
+    "name": "appventus/aviary-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony AvAviaryBundle",
+    "keywords": ["gallery", "upload", "Aviary"],
+    "homepage": "https://github.com/AppVentus/AvAviaryBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hyukchan Kwon",
+            "email": "hyukchan@appventus.com",
+            "homepage": "http://appventus.com"
+        }
+    ],
+    "require": {
+        "friendsofsymfony/jsrouting-bundle": "2.0.*@dev"
+    },
+    "require-dev": {
+        "symfony/class-loader": "2.5.*",
+        "pagerfanta/pagerfanta": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "AppVentus\\AviaryBundle": "" }
+    },
+    "target-dir": "AppVentus/AviaryBundle",
+    "minimum-stability": "dev",
+    "suggest": {
+        "appventus/assetic-injector-bundle" : "Fast way to add styles and javascripts"
+    }
+}

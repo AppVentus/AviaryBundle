@@ -1,0 +1,37 @@
+{
+    "require_all":
+    {
+        "javascripts":
+        {
+            "aviary_scripts":
+            [
+                "@AviaryBundle/Resources/public/js/jquery.min.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/vendor/jquery.ui.widget.js",
+                "@AviaryBundle/Resources/public/js/tmpl.min.js",
+                "@AviaryBundle/Resources/public/js/load-image.min.js",
+                "@AviaryBundle/Resources/public/js/canvas-to-blob.min.js",
+                "@AviaryBundle/Resources/public/js/bootstrap.min.js",
+                "@AviaryBundle/Resources/public/js/jquery.blueimp-gallery.min.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.iframe-transport.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-process.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-image.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-validate.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-ui.js",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/main.js",
+                "@AviaryBundle/Resources/public/js/feather.js",
+                "@AviaryBundle/Resources/public/js/aviary.js"
+            ]
+        },
+        "stylesheets":
+        {
+            "aviary_styles":
+            [
+                "@AviaryBundle/Resources/public/css/bootstrap.min.css",
+                "@AviaryBundle/Resources/public/css/blueimp-gallery.min.css",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/css/jquery.fileupload.css",
+                "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/css/jquery.fileupload-ui.css"
+            ]
+        }
+    }
+}
