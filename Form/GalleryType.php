@@ -1,17 +1,16 @@
 <?php
 
-namespace Appventus\AviaryBundle\Form;
+namespace AppVentus\AviaryBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Appventus\AviaryBundle\Form\PictureType;
 
 class GalleryType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -30,7 +29,7 @@ class GalleryType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Appventus\AviaryBundle\Entity\Gallery'
+            'data_class' => 'AppVentus\AviaryBundle\Entity\Gallery'
         ));
     }
 

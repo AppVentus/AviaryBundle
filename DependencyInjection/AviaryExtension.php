@@ -1,6 +1,6 @@
 <?php
 
-namespace Appventus\AviaryBundle\DependencyInjection;
+namespace AppVentus\AviaryBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

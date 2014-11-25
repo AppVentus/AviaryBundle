@@ -1,14 +1,10 @@
 <?php
 
-namespace Appventus\AviaryBundle\Controller;
+namespace AppVentus\AviaryBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
-use Appventus\AviaryBundle\Entity\Gallery;
-use Appventus\AviaryBundle\Entity\Picture;
-use Appventus\AviaryBundle\Form\GalleryType;
 
 class DefaultController extends Controller
 {
@@ -22,6 +18,6 @@ class DefaultController extends Controller
 
             return new Response('');
         } catch (\Exception $e) { }
-        
+
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Appventus\AviaryBundle\Entity;
+namespace AppVentus\AviaryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Picture
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Appventus\AviaryBundle\Entity\PictureRepository")
+ * @ORM\Entity(repositoryClass="AppVentus\AviaryBundle\Entity\PictureRepository")
  */
 class Picture
 {
@@ -29,7 +29,7 @@ class Picture
     private $path;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Appventus\AviaryBundle\Entity\Gallery", inversedBy="pictures")
+     * @ORM\ManyToOne(targetEntity="AppVentus\AviaryBundle\Entity\Gallery", inversedBy="pictures")
      * @ORM\JoinColumn(nullable=false)
      */
     private $gallery;
@@ -37,20 +37,20 @@ class Picture
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-    
+
     /**
      * Set gallery
      *
-     * @param \Appventus\AviaryBundle\Entity\Gallery $gallery
+     * @param  \AppVentus\AviaryBundle\Entity\Gallery $gallery
      * @return Picture
      */
-    public function setGallery(\Appventus\AviaryBundle\Entity\Gallery $gallery = null)
+    public function setGallery(\AppVentus\AviaryBundle\Entity\Gallery $gallery = null)
     {
         $this->gallery = $gallery;
 
@@ -60,7 +60,7 @@ class Picture
     /**
      * Get gallery
      *
-     * @return \Appventus\AviaryBundle\Entity\Gallery 
+     * @return \AppVentus\AviaryBundle\Entity\Gallery
      */
     public function getGallery()
     {
@@ -70,7 +70,7 @@ class Picture
     /**
      * Set path
      *
-     * @param string $path
+     * @param  string  $path
      * @return Picture
      */
     public function setPath($path)
@@ -83,7 +83,7 @@ class Picture
     /**
      * Get path
      *
-     * @return string 
+     * @return string
      */
     public function getPath()
     {

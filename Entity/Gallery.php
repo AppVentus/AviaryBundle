@@ -1,6 +1,6 @@
 <?php
 
-namespace Appventus\AviaryBundle\Entity;
+namespace AppVentus\AviaryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Gallery
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Appventus\AviaryBundle\Entity\GalleryRepository")
+ * @ORM\Entity(repositoryClass="AppVentus\AviaryBundle\Entity\GalleryRepository")
  */
 class Gallery
 {
@@ -22,21 +22,19 @@ class Gallery
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Appventus\AviaryBundle\Entity\Picture", mappedBy="gallery", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="AppVentus\AviaryBundle\Entity\Picture", mappedBy="gallery", cascade={"persist"}, orphanRemoval=true)
      */
     protected $pictures;
-    
 
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
     }
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -46,10 +44,10 @@ class Gallery
     /**
      * Add pictures
      *
-     * @param \Appventus\AviaryBundle\Entity\Picture $pictures
+     * @param  \AppVentus\AviaryBundle\Entity\Picture $pictures
      * @return Gallery
      */
-    public function addPicture(\Appventus\AviaryBundle\Entity\Picture $picture)
+    public function addPicture(\AppVentus\AviaryBundle\Entity\Picture $picture)
     {
         $picture->setGallery($this);
         $this->pictures[] = $picture;
@@ -60,9 +58,9 @@ class Gallery
     /**
      * Remove pictures
      *
-     * @param \Appventus\AviaryBundle\Entity\Picture $pictures
+     * @param \AppVentus\AviaryBundle\Entity\Picture $pictures
      */
-    public function removePicture(\Appventus\AviaryBundle\Entity\Picture $picture)
+    public function removePicture(\AppVentus\AviaryBundle\Entity\Picture $picture)
     {
         $this->pictures->removeElement($picture);
         $picture->setGallery(null);
@@ -71,7 +69,7 @@ class Gallery
     /**
      * Get pictures
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPictures()
     {
@@ -80,7 +78,7 @@ class Gallery
     /**
      * Set pictures
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function setPictures($pictures)
     {

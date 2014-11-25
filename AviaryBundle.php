@@ -1,6 +1,6 @@
 <?php
 
-namespace Appventus\AviaryBundle;
+namespace AppVentus\AviaryBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

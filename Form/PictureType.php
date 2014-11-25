@@ -1,6 +1,6 @@
 <?php
 
-namespace Appventus\AviaryBundle\Form;
+namespace AppVentus\AviaryBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -10,21 +10,21 @@ class PictureType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('path', 'hidden', array());
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Appventus\AviaryBundle\Entity\Picture'
+            'data_class' => 'AppVentus\AviaryBundle\Entity\Picture'
         ));
     }
 
