@@ -27,7 +27,8 @@
 }
 
 /* Fixes for IE < 8 */
-@media screen\9 {
+@ltIE8screen: ~"screen\9";
+@media @ltIE8screen {
   .fileinput-button input {
     filter: alpha(opacity=0);
     font-size: 100%;
