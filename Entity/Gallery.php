@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Gallery
  *
- * @ORM\Table()
+ * @ORM\Table("av_gallery")
  * @ORM\Entity(repositoryClass="AppVentus\AviaryBundle\Entity\GalleryRepository")
  */
 class Gallery

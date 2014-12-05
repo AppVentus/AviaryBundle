@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Picture
  *
- * @ORM\Table()
+ * @ORM\Table("av_picture")
  * @ORM\Entity(repositoryClass="AppVentus\AviaryBundle\Entity\PictureRepository")
  */
 class Picture
