@@ -12,7 +12,7 @@
 /* global $, window */
 
 $(function () {
-    var urlJFU = window.location.origin + '/bundles/aviary/jQuery-File-Upload-9.5.8/server/php/index.php';
+    var urlJFU = window.location.origin + Routing.generate('aviary_upload_image');
     'use strict';
 
     // Initialize the jQuery File Upload widget:
@@ -39,7 +39,7 @@ $(function () {
         )
     );
 
-    
+
     // Load existing files:
     $('#fileupload').addClass('fileupload-processing');
     $.ajax({
