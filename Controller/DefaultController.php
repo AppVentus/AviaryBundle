@@ -2,9 +2,10 @@
 
 namespace AppVentus\AviaryBundle\Controller;
 
+use AppVentus\AviaryBundle\Handler\UploadHandler;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -18,6 +19,18 @@ class DefaultController extends Controller
 
             return new Response('');
         } catch (\Exception $e) { }
+
+    }
+    public function uploadAction(Request $request)
+    {
+        $options = array(
+            'script_url' => $request->getUri(),
+            'upload_dir' => $this->container->getParameter('aviary.upload_dir'),
+            'upload_url' => $this->container->getParameter('aviary.upload_url'),
+        );
+        new UploadHandler($options);
+
+        return new Response('');
 
     }
 }

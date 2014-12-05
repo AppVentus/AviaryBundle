@@ -3,3 +3,9 @@ aviary_save_image:
     defaults: { _controller: AviaryBundle:Default:save }
     options:
         expose: true
+
+aviary_upload_image:
+    pattern: /aviary/upload
+    defaults: { _controller: AviaryBundle:Default:upload }
+    options:
+        expose: true
