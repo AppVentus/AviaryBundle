@@ -15,7 +15,10 @@ var featherEditor = new Aviary.Feather({
         alert(errorObj.message);
     },
 });
-function launchEditor(id, src) {
+function launchEditor(id, src, callback) {
+    if (typeof callback !== "undefined") {
+        window.aviaryCallback = callback;
+    }
     featherEditor.launch({
         image: id,
         url: src
@@ -24,13 +27,19 @@ function launchEditor(id, src) {
 }
 
 function postImage(imageID, newURL) {
-    var fn = $('img#'+imageID).attr('src');
+    var image = $('img#'+imageID);
+    var fn = image.attr('src');
     var date = new Date().getTime();
     var urlJFU = window.location.origin+Routing.generate('aviary_save_image');
-    // var urlJFU = window.location.origin + '/bundles/aviary/jQuery-File-Upload-9.5.8/server/php/';
+
     $.ajax({
         type: 'POST',
         url: urlJFU,
         data: { urlFrom: newURL, urlTo: fn },
+    }).done(function(file) {
+        if (typeof aviaryCallback !== "undefined") {
+            aviaryCallback(file, image)
+        }
     });
 }
+
