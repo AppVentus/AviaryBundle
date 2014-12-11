@@ -19,6 +19,7 @@ class GalleryType extends AbstractType
                 'type'         => new PictureType(),
                 'allow_add'    => true,
                 'allow_delete' => true,
+                'label' => false,
                 'by_reference' => false))
         ;
     }
