@@ -3,12 +3,17 @@
     "type": "symfony-bundle",
     "description": "Symfony AvAviaryBundle",
     "keywords": ["gallery", "upload", "Aviary"],
-    "homepage": "https://github.com/AppVentus/AvAviaryBundle",
+    "homepage": "https://github.com/AppVentus/AviaryBundle",
     "license": "MIT",
     "authors": [
         {
             "name": "Hyukchan Kwon",
             "email": "hyukchan@appventus.com",
+            "homepage": "http://appventus.com"
+        },
+        {
+            "name": "Paul Andrieux",
+            "email": "paul@appventus.com",
             "homepage": "http://appventus.com"
         }
     ],
