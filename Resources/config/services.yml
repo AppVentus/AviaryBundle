@@ -1,0 +1,15 @@
+services:
+    appventus.aviary.picture_path_extension:
+        class: AppVentus\AviaryBundle\Twig\Extension\PicturePathExtension
+        arguments:
+            - %aviary.options%
+        tags:
+            - { name: twig.extension }
+
+    appventus.aviary.upload_handler:
+        class: AppVentus\AviaryBundle\Handler\UploadHandler
+        arguments:
+            - %aviary.options%
+            - @router
+            - @appventus.aviary.picture_path_extension
+
