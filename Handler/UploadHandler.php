@@ -80,6 +80,30 @@ class UploadHandler
         }
     }
 
+    public function uploadFromLink($urlTo, $urlFrom)
+    {
+        $image_data = file_get_contents($urlFrom);
+        $fromInfo = pathinfo($urlFrom);
+
+        $toInfo = pathinfo($urlTo);
+        $urlTo = $toInfo['dirname'] . '/' . urldecode($toInfo['filename']) . '.' . $fromInfo['extension'];
+
+        file_put_contents($urlTo, $image_data);
+
+        $file = new \stdClass();
+        $file->name = basename($urlTo);
+        $file->url = $this->picturePathExtension->avPicturePath($file->name);
+        $file->base64 = $this->picturePathExtension->avPictureBase64($file->name);
+
+        foreach ($this->options['image_versions'] as $version => $versionParams) {
+            if ($version !== '') {
+                $file->{$version . 'Url'} = $this->picturePathExtension->avPictureVersionPath($file->name, $version);
+            }
+        }
+
+        return $file;
+    }
+
     protected function get_full_url()
     {
         $https = !empty($_SERVER['HTTPS']) && strcasecmp($_SERVER['HTTPS'], 'on') === 0;
