@@ -6,6 +6,7 @@ var featherEditor = new Aviary.Feather({
     theme: 'dark', // Check out our new 'light' and 'dark' themes!
     tools: ['crop', 'resize', 'enhance', 'blemish'],
     appendTo: '',
+    language: 'fr',
     onSave: function(imageID, newURL) {
         postImage(imageID, newURL);
         featherEditor.close();
