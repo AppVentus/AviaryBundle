@@ -28,5 +28,8 @@ class AviaryExtension extends Extension
         $container->setParameter(
             'aviary.options', $config
         );
+        $container->setParameter(
+            'aviary.options.upload_dir', $config['upload_dir']
+        );
     }
 }

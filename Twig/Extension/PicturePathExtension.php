@@ -50,7 +50,7 @@ use Symfony\Component\HttpFoundation\File\File;
      */
     public function avPicturePath($path)
     {
-        $url = $this->aviaryOptions['upload_url'] . $path;
+        $url = $path ? $this->aviaryOptions['upload_url'] . $path : null;
 
         return $url;
     }
