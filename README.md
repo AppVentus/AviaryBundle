@@ -81,6 +81,13 @@ Add "aviary.uploadpath" parameter to your config.yml :
     parameters:
         aviary.uploadpath: /
 
+And add "AviaryBundle:Form:fields.html.twig" to your twig.yml :
+
+    twig:
+        form:
+            resources:
+                - 'AviaryBundle:Form:fields.html.twig'
+
 ###Step 5 : Add styles and scripts
 
 ####AsseticInjectorBundle way
