@@ -49,9 +49,6 @@ class UploadHandler
 
     public function __construct($options = array(), Router $router, PicturePathExtension $picturePathExtension)
     {
-        if (empty($options['image_versions'][''])) {
-            $options['image_versions']['']['auto_orient'] = true;
-        }
         $options['script_url'] = $router->generate('aviary_upload_image');
         $this->options = $options;
         $this->picturePathExtension = $picturePathExtension;
