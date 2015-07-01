@@ -1,21 +1,3 @@
-<!-- Instantiate Feather -->
-
-var featherEditor = new Aviary.Feather({
-    apiKey: '7419e85d89af316d',
-    apiVersion: 3,
-    theme: 'dark', // Check out our new 'light' and 'dark' themes!
-    tools: ['crop', 'resize', 'enhance', 'blemish'],
-    appendTo: '',
-    language: 'fr',
-    onSave: function(imageID, newURL) {
-        postImage(imageID, newURL);
-        featherEditor.close();
-        return false;
-    },
-    onError: function(errorObj) {
-        alert(errorObj.message);
-    },
-});
 function launchEditor(id, src, callback) {
     if (typeof callback !== "undefined") {
         window.aviaryCallback = callback;

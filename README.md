@@ -90,46 +90,11 @@ And add "AviaryBundle:Form:fields.html.twig" to your twig.yml :
 
 ###Step 5 : Add styles and scripts
 
-####AsseticInjectorBundle way
+If You have installed our [AsseticInjectorBundle](https://github.com/AppVentus/AsseticInjectorBundle/edit/master/README.md) bundle, add the injector tags :
 
-If You have installed our insanous [AsseticInjectorBundle](https://github.com/AppVentus/AsseticInjectorBundle/edit/master/README.md) bundle:
+- javascripts (injector="aviary_scripts")
+- stylesheets (injector="aviary_styles")
 
-    1. You are awesome ;)
-    2. you just have to add the injector tags in your javascript (injector="aviary_scripts") and stylesheet (injector="aviary_styles") blocks.
-
-####The poor, bad and ancestral way !
-
-    1. Just add in your assetic 
-        {% javascripts
-            "@AviaryBundle/Resources/public/js/jquery.min.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/vendor/jquery.ui.widget.js",
-            "@AviaryBundle/Resources/public/js/tmpl.min.js",
-            "@AviaryBundle/Resources/public/js/load-image.min.js",
-            "@AviaryBundle/Resources/public/js/canvas-to-blob.min.js",
-            "@AviaryBundle/Resources/public/js/bootstrap.min.js",
-            "@AviaryBundle/Resources/public/js/jquery.blueimp-gallery.min.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.iframe-transport.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-process.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-image.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-validate.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/jquery.fileupload-ui.js",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/js/main.js",
-            "@AviaryBundle/Resources/public/js/feather.js",
-            "@AviaryBundle/Resources/public/js/aviary.js"
-        %}
-            <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-
-    2. Just add in your assetic
-        {% stylesheets 
-            "@AviaryBundle/Resources/public/css/bootstrap.min.css",
-            "@AviaryBundle/Resources/public/css/blueimp-gallery.min.css",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/css/jquery.fileupload.css",
-            "@AviaryBundle/Resources/public/jQuery-File-Upload-9.5.8/css/jquery.fileupload-ui.css"
-        %}
-            <link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}
 
 ###Step 6 : The Form !
     {{ form_start(form, {'method': 'POST', 'attr' : {'id' : 'fileupload'}}) }}
@@ -138,10 +103,22 @@ If You have installed our insanous [AsseticInjectorBundle](https://github.com/Ap
     <input type="submit" name="submit" value="Submit" />
     {{ form_end(form) }}
 
-###Step 7 : Optionnal
+###Step 7 : Main script
 
-Additional configuration :
-
-Files will be inside /web/bundles/aviary/jQuery-File-Upload-9.5.8/server/php/files/
-
-You can customize move uploaded pictures in another directory with a listener.
+```javascript
+var featherEditor = new Aviary.Feather({
+    apiKey: 'yourapikey',
+    apiVersion: 3,
+    theme: 'dark',
+    appendTo: '',
+    language: 'fr',
+    onSave: function(imageID, newURL) {
+        postImage(imageID, newURL);
+        featherEditor.close();
+        return false;
+    },
+    onError: function(errorObj) {
+        alert(errorObj.message);
+    }
+});
+```
