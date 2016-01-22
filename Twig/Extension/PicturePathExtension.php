@@ -33,17 +33,17 @@ use Symfony\Component\HttpFoundation\File\File;
      */
     public function getFilters()
     {
-        return array(
-            'avPicturePath' => new \Twig_SimpleFilter('avPicturePath', array($this, 'avPicturePath')),
-            'avPictureBase64' => new \Twig_SimpleFilter('avPictureBase64', array($this, 'avPictureBase64')),
-            'avPictureVersionPath' => new \Twig_SimpleFilter('avPictureVersionPath', array($this, 'avPictureVersionPath')),
-            'avPictureVersionBase64' => new \Twig_SimpleFilter('avPictureVersionBase64', array($this, 'avPictureVersionBase64'))
-        );
+        return [
+            new \Twig_SimpleFilter('avPicturePath', [$this, 'avPicturePath']),
+            new \Twig_SimpleFilter('avPictureBase64', [$this, 'avPictureBase64']),
+            new \Twig_SimpleFilter('avPictureVersionPath', [$this, 'avPictureVersionPath']),
+            new \Twig_SimpleFilter('avPictureVersionBase64', [$this, 'avPictureVersionBase64'])
+        ];
     }
 
     /**
      * generates the path for a picture
-     * @param TwigEnvironment $environment
+     * @param \Twig_Environment $environment
      * @param Session         $session
      *
      * @return string
@@ -56,7 +56,7 @@ use Symfony\Component\HttpFoundation\File\File;
     }
     /**
      * generates the base64 for a picture
-     * @param TwigEnvironment $environment
+     * @param \Twig_Environment $environment
      * @param Session         $session
      *
      * @return string
@@ -71,7 +71,7 @@ use Symfony\Component\HttpFoundation\File\File;
 
     /**
      * generates the path for a picture's thumbnail
-     * @param TwigEnvironment $environment
+     * @param \Twig_Environment $environment
      * @param Session         $session
      *
      * @return string
@@ -87,7 +87,7 @@ use Symfony\Component\HttpFoundation\File\File;
     }
     /**
      * generates the path for a picture's thumbnail
-     * @param TwigEnvironment $environment
+     * @param \Twig_Environment $environment
      * @param Session         $session
      *
      * @return string
